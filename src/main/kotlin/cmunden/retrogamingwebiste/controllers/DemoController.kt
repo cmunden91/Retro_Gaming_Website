@@ -1,14 +1,13 @@
 package cmunden.retrogamingwebiste.controllers
 
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.ResponseBody
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.stereotype.Controller
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping
 
-@RestController
+@Controller
 class DemoController {
-    @RequestMapping("/")
-    @ResponseBody
-    public fun demoReturn(): String {
-        return "An example of the Rest controller return statement!";
+    @GetMapping("/")
+    public fun homePage(model: Model): String {
+        return "home";
     }
 }

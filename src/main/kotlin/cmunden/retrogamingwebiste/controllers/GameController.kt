@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.ResponseBody
 class GameController {
     @GetMapping("/getGames")
     @ResponseBody
-    public fun getGames(): Game {
+    public fun getGames(): Array<Game> {
         val exampleGame = Game(1, "Test Game", 1991, "Placeholder")
-        return(exampleGame);
+        val exampleGame2 = Game(3, "Test Game: The Sequel", 1995, "Placeholder")
+        val Games = arrayOf (exampleGame, exampleGame2)
+        return(Games);
     }
 }
 

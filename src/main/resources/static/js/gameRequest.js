@@ -10,11 +10,18 @@ function getGameList(){
     }
     })
     .then(data => {
-        addGameToView(data)
+        console.log(data)
+        addGamesToView(data)
     })
     .catch(error => {
     console.error("Problem reading data",  error)})
 };
+
+function addGamesToView(games) {
+    for (game of games) {
+        addGameToView(game)
+    }
+}
 
 function addGameToView(game) {
     var newDiv = document.createElement("div")
@@ -25,5 +32,4 @@ function addGameToView(game) {
     newImg.setAttribute("src", game.imgLocation)
     newDiv.appendChild(newImg)
     gameDiv[0].appendChild(newDiv)
-
 }

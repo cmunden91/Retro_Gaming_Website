@@ -9,7 +9,7 @@ class GameController {
     @GetMapping("/getGames")
     @ResponseBody
     public fun getGames(): Game {
-        val exampleGame = Game(1, "Test Game", 1991, "Success!")
+        val exampleGame = Game(1, "Test Game", 1991, "Placeholder")
         return(exampleGame);
     }
 }
